@@ -6,9 +6,10 @@ load 'queue.rb'
 class Main ()
 
 	def initialize()
-		checkout = Checkout.new()
+	    @checkout = Checkout.new()
+		@queue = Queue.new()
 		iterator = 0.to_i
-		@queueArray = Array.new()
+		@queueArray = []
 		@checkoutArray = Array.new()
 		puts "Input simulation time on minutes."
 		simulation_Time = gets#Minute input
@@ -38,10 +39,9 @@ class Main ()
 
    def multipleQueue()
 		 puts "multipleQueue"
-		 @checkoutArray.push(checkout.checkoutName)
-		 @queueArray.push(queue.clientsArrival())
+		 @checkoutArray.push(@checkout.checkoutName())
 		 puts @checkoutArray
-		 puts @queueArray
+		 @queueArray.push(@queue.clientsArrival())
    end
 
 end

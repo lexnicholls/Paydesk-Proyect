@@ -6,11 +6,10 @@ class Queue
 	def initialize()
 		@queue_Client = Array.new
 		@total_Time = 0
-		getClient(clientsArrival())
 	end
 
 	def clientsArrival()
-		return rand(0..5)
+		return getClient(rand(0..5))
 	end
 
 	def getClient(random)
@@ -25,6 +24,5 @@ class Queue
 
 	def printClient()
 		puts @queue_Client
-  end
-
+	end
 end
