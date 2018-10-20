@@ -6,11 +6,11 @@ class Queue
 	def initialize()
 		@queue_Client = Array.new
 		@total_Time = 0
-		getClient()
+		getClient(clientsArrival())
 	end
 
 	def clientsArrival()
-		arrivingClients = rand(0..5)
+		return rand(0..5)
 	end
 
 	def getClient(@random)
