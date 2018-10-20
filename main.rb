@@ -26,7 +26,7 @@ class Main ()
         when 1
             uniqQueue()
         when 2
-            multipleQueue()
+            multipleQueue(gets)
         else
             puts "The simulator didn't recognize the input."
             initialize()
@@ -37,11 +37,15 @@ class Main ()
          puts "uniqQueue"
    end
 
-   def multipleQueue()
+   def multipleQueue(files)
          puts "multipleQueue"
-         @checkoutArray.push(@checkout.checkoutName())
-         puts @checkoutArray
-         @queueArray.push(@queue.clientsArrival())
+				 i = 0
+				 while i < files
+           @checkoutArray.push(@checkout.checkoutName())
+           puts @checkoutArray
+           @queueArray.push(@queue.clientsArrival())
+					 i=i+1
+				 end
    end
 
 end
