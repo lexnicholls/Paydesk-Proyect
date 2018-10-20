@@ -38,8 +38,8 @@ class Main ()
 
    def multipleQueue()
 		 puts "multipleQueue"
-		 @checkoutArray.push(checkout.emptyCheckout)
-		 @queueArray.push(queue.getClient)
+		 @checkoutArray.push(checkout.checkoutName)
+		 @queueArray.push(queue.clientsArrival())
 		 puts @checkoutArray
 		 puts @queueArray
    end
