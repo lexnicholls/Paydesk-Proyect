@@ -1,4 +1,6 @@
 #Queue object
+Load 'client.rb'
+
 class Queue
 
 	def initialize()
@@ -16,7 +18,7 @@ class Queue
 	end
 
 	def printClient()
-
+		puts "|"+@queue_Client+"|"
   end
 
 end
