@@ -14,10 +14,10 @@ class Queue
 	end
 
 	def getClient(@random)
-		i=0
-		while i<@random
+		@i=0
+		while @i<@random
 			@queue_Client.push(Client.new())
-			i=i+1
+			@i=@i+1
 		end
 	end
 
