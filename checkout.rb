@@ -2,16 +2,16 @@
 load 'client.rb'
 class Checkout
 
-   client = Client.new()
    def initialize
+     client = Client.new()
      @timeOnPaydesk = client.returnTime()
      @status = true
      @checkoutObject = Array.new()
      @checkoutObject = ['|C|', client.returnClient]
    end
 
-   def emptyCheckout()
+   def checkoutName()
      return @checkoutObject[0]
    end
-   
+
 end

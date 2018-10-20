@@ -22,7 +22,7 @@ class Queue
 		end
 		printClient()
 	end
-#print client
+
 	def printClient()
 		puts @queue_Client
   end

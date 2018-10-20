@@ -1,10 +1,15 @@
-#M#Main class
+#Main class
+load 'client.rb'
+load 'checkout.rb'
+load 'queue.rb'
 
 class Main ()
 
 	def initialize()
+		checkout = Checkout.new()
 		iterator = 0.to_i
-		queueArray = Array.new
+		@queueArray = Array.new()
+		@checkoutArray = Array.new()
 		puts "Input simulation time on minutes."
 		simulation_Time = gets#Minute input
 		puts "Input iteration time on seconds"
@@ -22,7 +27,7 @@ class Main ()
 		when 2
 			multipleQueue()
 		else
-			puts "the program don´t reconoce the name"
+			puts "The simulator didn't recognize the input."
 			initialize()
      end
    end
@@ -33,6 +38,10 @@ class Main ()
 
    def multipleQueue()
 		 puts "multipleQueue"
+		 @checkoutArray.push(checkout.emptyCheckout)
+		 @queueArray.push(queue.getClient)
+		 puts @checkoutArray
+		 puts @queueArray
    end
 
 end
