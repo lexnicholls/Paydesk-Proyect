@@ -1,10 +1,13 @@
 #Main class
 
 class Main ()
-	iterator = 0.to_i
-	queueArray = Array.new
-	simulation_Time = 0 #Minute input
-	iteration_Time = 0 #Seconds input
+
+	def initialize()
+		iterator = 0.to_i
+		queueArray = Array.new
+		simulation_Time = gets#Minute input
+		iteration_Time = gets #Seconds input
+	end
 
 	def Menu (option)
 	  case(option)
@@ -20,7 +23,7 @@ class Main ()
    end
 
    def	uniqQueue()
-		 
+
    end
 
    def multipleQueue()
