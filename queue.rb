@@ -6,15 +6,19 @@ class Queue
 	def initialize()
 		@queue_Client = Array.new
 		@total_Time = 0
-
+		getClient()
 	end
 
 	def clientsArrival()
 		arrivingClients = rand(0..5)
 	end
 
-	def getClient()
+	def getClient(@random)
+		i=0
+		while i<@random
 			@queue_Client.push(Client.new())
+			i=i+1
+		end
 	end
 
 	def printClient()
