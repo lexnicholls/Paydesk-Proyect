@@ -26,6 +26,7 @@ class Main ()
         when 1
             uniqQueue()
         when 2
+		puts "Input active paydesks."
             multipleQueue(gets)
         else
             puts "The simulator didn't recognize the input."
@@ -40,12 +41,21 @@ class Main ()
    def multipleQueue(files)
          puts "multipleQueue"
 				 i = 0
-				 while i < files
-           @checkoutArray.push(@checkout.checkoutName())
-           puts @checkoutArray
-           @queueArray.push(@queue.clientsArrival())
-					 i=i+1
+				 while i < files.to_i
+					@checkoutArray.push(@checkout.checkoutName())
+					i=i+1
 				 end
+				 puts
+				 print @checkoutArray.join(" ")
+			     puts
+				 puts
+				 puts
+				 i = 0
+				 while i < files.to_i
+					@queueArray.push(@queue.clientsArrival())
+					i += 1
+				 end
+				 #puts a.join("\n")
    end
 
 end
