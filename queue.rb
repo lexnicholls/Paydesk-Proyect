@@ -1,5 +1,5 @@
 #Queue object
-Load 'client.rb'
+load 'client.rb'
 
 class Queue
 
@@ -13,16 +13,18 @@ class Queue
 		return rand(0..5)
 	end
 
-	def getClient(@random)
+	def getClient(random)
 		@i=0
-		while @i<@random
-			@queue_Client.push(Client.new())
+		while @i<random
+		    client = Client.new()
+			@queue_Client.push("|" + client.returnClient + "|")
 			@i=@i+1
 		end
+		printClient()
 	end
-
+#print client
 	def printClient()
-		puts "|"+@queue_Client+"|"
+		puts @queue_Client
   end
 
 end
