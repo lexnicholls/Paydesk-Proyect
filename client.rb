@@ -13,6 +13,14 @@ class Client
    def generateClient
     randomClient = rand(0..24)
     clientName = @clientArray[randomClient]
+	return clientName
    end
 
+   def returnClient
+     return @clientObject[0]
+   end
+
+   def returnTime
+     return @clientObject[1]
+   end
 end
