@@ -53,21 +53,13 @@ class Main ()
          puts
          @queueArray[0].clientsArrival(files)
                  verifyCheckbox(files)
-                 actualizeClientTime()
         j += 1
      end
    end
 
-   def actualizeClientTime()
-     @checkoutArray.each do |b|
-       b.setClientTime(b.getClientTime - 1)
-     end
-
-   end
-
    def modifyStatusCheckbox()
      @checkoutArray.each do |b|
-       if b.getClientTime() = 0
+       if b.getClientTime() == 0
          b.setChangesStatus()
        end
      end
@@ -75,16 +67,16 @@ class Main ()
 
    def printInFrontTheBox()
      @checkoutArray.each do |b|
-        puts " #{b.getClient()} "
+        print " #{b.getClient()} "
      end
    end
 
    def initializeArraysMultiple(value)
-     for i in (0..value)
-       @queueArray<< queue.new
+     for i in (0..value.to_i)
+       @queueArray<< Queue.new
      end
-     for i in (0..value)
-       @checkoutArray<< checkout.new
+     for i in (0..value.to_i)
+       @checkoutArray<< Checkout.new
      end
    end
 
@@ -99,14 +91,30 @@ class Main ()
    def verifyCheckbox(files)
      i=0
      while i < files.to_i
-       if (@checkoutArray[i].getStatus())
-         if (@checkoutArray.length > 0 & @checkoutArray[i].returnTime == 0 )
-           @checkoutArray[1].setClient(@queueArray[i].returnFirstClient())
-           @checkoutArray[1].setClientTime(@queueArray[i].returnTime())
-           @queueArray[i].deleteFirstTime()
-           @queueArray[i].deleteFirstClient()
+       if (@checkoutArray[0].getStatus())
+         if (@checkoutArray.length > 0)
+           @checkoutArray[1].setClient(@queueArray[0].returnFirstClient())
+           @checkoutArray[1].setClientTime(@queueArray[0].returnTime())
+           @queueArray[0].deleteFirstTime()
+           @queueArray[0].deleteFirstClient()
            @checkoutArray[1].setChangesStatus()
-           i -= 1
+         end
+       end
+       i+=1
+     end
+   end
+
+   def verifyCheckboxMulti(files)
+     i=0
+     while i < files.to_i
+       if (@checkoutArray[0].getStatus())
+         if (@checkoutArray.length > 0)
+           j = 0
+             @checkoutArray[1].setClient(@queueArray[0].returnFirstClient())
+             @checkoutArray[1].setClientTime(@queueArray[0].returnTime())
+             @queueArray[0].deleteFirstTime()
+             @queueArray[0].deleteFirstClient()
+             @checkoutArray[1].setChangesStatus()
          end
        end
        i+=1
@@ -115,7 +123,25 @@ class Main ()
 
    def multipleQueue(files)
          puts "multipleQueue"
-				 #puts a.join("\n")
+         j = 0
+         while j < files.to_i
+           i = 0
+           while i < files.to_i
+             print @checkoutArray[i].checkoutName()
+             @checkoutArray[i].setCheckboxNumber(i)
+             i += 1
+           end
+             puts
+             printInFrontTheBox()
+             puts
+             k = 0
+             while k < files.to_i
+               @queueArray[0].clientsArrival(files)
+               verifyCheckboxMulti(files)
+               k += 1
+             end
+            j += 1
+         end
    end
 
 end
