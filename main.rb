@@ -10,9 +10,9 @@ class Main ()
         @queueArray = Array.new()
         @checkoutArray = Array.new()
         puts "Input simulation time on minutes."
-        simulation_Time = gets#Minute input
+        @simulation_Time = gets#Minute input
         puts "Input iteration time on seconds"
-        iteration_Time = gets #Seconds input
+        @iteration_Time = gets #Seconds input
         puts "Input queue system:"
         puts "1. Unique queue."
         puts "2. Multiple queue."
@@ -39,7 +39,7 @@ class Main ()
 
    def uniqQueue(files)
      j = 0
-     while j < files.to_i
+     while j < @simulation_Time
        i = 0
        while i < files.to_i
          print @checkoutArray[i].checkoutName()
@@ -53,6 +53,7 @@ class Main ()
          puts
          @queueArray[0].clientsArrival(files)
                  verifyCheckbox(files)
+                 sleep(@iteration_Time)
         j += 1
      end
    end
