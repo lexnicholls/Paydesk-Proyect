@@ -5,7 +5,12 @@ class Queue
 
     def initialize()
         @queue_Client = Array.new
-        @total_Time = 0
+    end
+
+    def validationTime()
+      while i < @queue_Client.lentgh
+
+      end
     end
 
     def clientsArrival(file)

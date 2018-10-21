@@ -5,10 +5,14 @@ class Checkout
 
    def initialize
      client = Client.new()
-     @timeOnPaydesk = client.returnTime()
+     @timeOnPaydesk = 0
      @status = true
      @checkoutObject = Array.new()
      @checkoutObject = ['|C|', "   "]
+   end
+
+   def setClientTime(time)
+     @timeOnPaydesk = time.to_i
    end
 
    def checkoutName()
