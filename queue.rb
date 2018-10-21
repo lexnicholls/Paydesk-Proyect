@@ -8,21 +8,38 @@ class Queue
         @total_Time = 0
     end
 
-    def clientsArrival()
-        return getClient(rand(0..5))
+    def clientsArrival(file)
+        return getClient(rand(0..5),file)
     end
 
-    def getClient(random)
+    def returnFirstClient()
+      return @queue_Client.first
+    end
+
+    def deleteFirstClient()
+      @queue_Client.shift
+    end
+
+    def getClient(random,file)
         @i=0
         while @i<random
             client = Client.new()
             @queue_Client.push("|" + client.returnClient + "|")
             @i=@i+1
         end
-        printClient()
+        printClient(file)
     end
 
-    def printClient()
-        puts @queue_Client
+    def printClient(files)
+        j = 0
+        @queue_Client.each do |variable|
+          while j < files.to_i/2
+            print "   "
+            j += 1
+          end
+          puts variable
+          j = 0
+          end
+        end
+
     end
-end
