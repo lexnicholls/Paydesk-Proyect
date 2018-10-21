@@ -45,20 +45,23 @@ class Main ()
          print @checkoutArray[i].checkoutName()
          i += 1
        end
-       i = 0
-       while i < files.to_i
-         print @checkoutArray[i].getClient()
-         i += 1
-       end
+         puts
+         printInFrontTheBox()
          puts
 
          puts
-        @queueArray[0].clientsArrival(files)
-        puts "________________________"
+         @queueArray[0].clientsArrival(files)
+         puts "________________________"
                  verifyCheckbox(files)
         j += 1
      end
+   end
 
+   def printInFrontTheBox()
+     while i < files.to_i
+       print " "+@checkoutArray[i].getClient()+" "
+       i += 1
+     end
    end
 
    def initializeArraysMultiple(value)

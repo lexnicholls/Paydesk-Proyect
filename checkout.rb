@@ -8,7 +8,7 @@ class Checkout
      @timeOnPaydesk = client.returnTime()
      @status = true
      @checkoutObject = Array.new()
-     @checkoutObject = ['|C|', ""]
+     @checkoutObject = ['|C|', "   "]
    end
 
    def checkoutName()
