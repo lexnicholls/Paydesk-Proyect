@@ -5,6 +5,7 @@ class Queue
 
     def initialize()
         @queue_Client = Array.new
+        @queue_Time = Array.new
     end
 
     def validationTime()
@@ -30,6 +31,7 @@ class Queue
         while @i<random
             client = Client.new()
             @queue_Client.push("|" + client.returnClient + "|")
+            @queue_Time.push(client.returnTime)
             @i=@i+1
         end
         printClient(file)
