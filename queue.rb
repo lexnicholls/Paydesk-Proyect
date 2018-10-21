@@ -8,12 +8,6 @@ class Queue
         @queue_Time = Array.new
     end
 
-    def validationTime()
-      while i < @queue_Client.lentgh
-
-      end
-    end
-
     def clientsArrival(file)
         return getClient(rand(0..5),file)
     end
