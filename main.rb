@@ -99,13 +99,14 @@ class Main ()
    def verifyCheckbox(files)
      i=0
      while i < files.to_i
-       if (@checkoutArray[0].getStatus())
-         if (@checkoutArray.length > 0)
-           @checkoutArray[1].setClient(@queueArray[0].returnFirstClient())
-           @checkoutArray[1].setClientTime(@queueArray[0].returnTime())
-           @queueArray[0].deleteFirstTime()
-           @queueArray[0].deleteFirstClient()
+       if (@checkoutArray[i].getStatus())
+         if (@checkoutArray.length > 0 & @checkoutArray[i].returnTime == 0 )
+           @checkoutArray[1].setClient(@queueArray[i].returnFirstClient())
+           @checkoutArray[1].setClientTime(@queueArray[i].returnTime())
+           @queueArray[i].deleteFirstTime()
+           @queueArray[i].deleteFirstClient()
            @checkoutArray[1].setChangesStatus()
+           i -= 1
          end
        end
        i+=1
