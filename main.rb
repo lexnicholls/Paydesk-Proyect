@@ -57,8 +57,8 @@ class Main ()
    end
 
    def printInFrontTheBox()
-     while i < files.to_i
-       print " "+@checkoutArray[i].getClient()+" "
+     while i < @checkoutArray.length
+       print " #{@checkoutArray[i].getClient()} "
        i += 1
      end
    end
