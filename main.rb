@@ -88,6 +88,7 @@ class Main ()
          if (@checkoutArray.length > 0)
            @checkoutArray[1].setClient(@queueArray[0].returnFirstClient())
            @checkoutArray[1].setClientTime(@queueArray[0].returnTime())
+           @queueArray[0].deleteFirstTime()
            @queueArray[0].deleteFirstClient()
            @checkoutArray[1].setChangesStatus()
          end

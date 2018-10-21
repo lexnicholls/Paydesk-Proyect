@@ -20,6 +20,14 @@ class Queue
       @queue_Client.shift
     end
 
+    def returnTime()
+      return @queue_Time.first
+    end
+
+    def deleteFirstTime()
+      @queue_Time.shift
+    end
+
     def getClient(random,file)
         @i=0
         while @i<random
