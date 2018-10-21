@@ -53,8 +53,16 @@ class Main ()
          puts
          @queueArray[0].clientsArrival(files)
                  verifyCheckbox(files)
+                 actualizeClientTime()
         j += 1
      end
+   end
+
+   def actualizeClientTime()
+     @checkoutArray.each do |b|
+       b.setClientTime(b.getClientTime - 1)
+     end
+
    end
 
    def modifyStatusCheckbox()
