@@ -43,6 +43,7 @@ class Main ()
        i = 0
        while i < files.to_i
          print @checkoutArray[i].checkoutName()
+         @checkoutArray[i].setCheckboxNumber(i)
          i += 1
        end
          puts
@@ -57,9 +58,8 @@ class Main ()
    end
 
    def printInFrontTheBox()
-     while i < @checkoutArray.length
-       print " #{@checkoutArray[i].getClient()} "
-       i += 1
+     @checkoutArray.each do |b|
+        puts " #{b.getClient()} "
      end
    end
 

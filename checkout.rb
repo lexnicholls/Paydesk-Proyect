@@ -7,8 +7,17 @@ class Checkout
      client = Client.new()
      @timeOnPaydesk = 0
      @status = true
+     @checkboxNumber = 0
      @checkoutObject = Array.new()
      @checkoutObject = ['|C|', "   "]
+   end
+
+   def getCheckboxNumber()
+     return @checkboxNumber
+   end
+
+   def setCheckboxNumber(number)
+     @checkboxNumber = number.to_i
    end
 
    def setClientTime(time)
