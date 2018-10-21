@@ -27,7 +27,11 @@ class Checkout
      return @status
    end
 
-   def setFalseStatus()
-     @status = false
+   def setChangesStatus()
+     if getStatus()
+       @status = false
+     else
+       @status = true
+     end
    end
 end
