@@ -57,6 +57,14 @@ class Main ()
      end
    end
 
+   def modifyStatusCheckbox()
+     @checkoutArray.each do |b|
+       if b.getClientTime() = 0
+         b.setChangesStatus()
+       end
+     end
+   end
+
    def printInFrontTheBox()
      @checkoutArray.each do |b|
         puts " #{b.getClient()} "

@@ -24,6 +24,10 @@ class Checkout
      @timeOnPaydesk = time.to_i
    end
 
+   def getClientTime()
+     return   @timeOnPaydesk
+   end
+
    def checkoutName()
      return @checkoutObject[0]
    end
