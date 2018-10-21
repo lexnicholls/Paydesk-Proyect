@@ -13,7 +13,7 @@ class Client
    def generateClient
     randomClient = rand(0..24)
     clientName = @clientArray[randomClient]
-	return clientName
+	  return clientName
    end
 
    def returnClient
