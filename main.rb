@@ -51,15 +51,14 @@ class Main ()
 
          puts
          @queueArray[0].clientsArrival(files)
-         puts "________________________"
                  verifyCheckbox(files)
         j += 1
      end
    end
 
    def printInFrontTheBox()
-     while i < @checkoutArray.length
-       print " #{@checkoutArray[i].getClient()} "
+     while i < files.to_i
+       print " "+@checkoutArray[i].getClient()+" "
        i += 1
      end
    end
